@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Ubuntu Main Repo",
+        "description": "Check if the Ubuntu main repository is available. and check the title of the page with the regex",
+        "expectedStatusCode": 200,
+        "checkRegex": "<title>Index of /ubuntu</title>",
+        "fullUrl": "http://archive.ubuntu.com/ubuntu/"
+    },
+    {
+        "name": "chk if example.com is online",
+        "fullUrl": "https://example.com"
+    },
+    {
+        "name": "Custom Port Service Check",
+        "description": "Check if a custom service on a specific port is available.know that if you specify a custom port, the server will not redirect you to another port for example this website is accesible if you ask http://example.com (because it will redirect you to https) but not if you ask http://example.com:8080 because this website is'nt available on http this is not a bug i think you can use it at your adventage",
+        "expectedStatusCode": 200,
+        "fullUrl": "http://example.com:8080"
+    },
+    {
+        "name": "check https://www.qwant.com/notExist not exist",
+        "description": "Check if the page /notExist. still DONT exist for now",
+        "expectedStatusCode": 404,
+        "fullUrl": "https://www.qwant.com/notExist"
+    },
+    {
+        "name": "JSONPlaceholder Posts",
+        "description": "Check if the JSONPlaceholder Posts API is available and returns the expected placeholder data.",
+        "checkRegex": "\"userId\": 1",
+        "fullUrl": "https://jsonplaceholder.typicode.com/posts"
+    }
+]
