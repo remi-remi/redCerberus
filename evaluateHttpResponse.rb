@@ -12,7 +12,7 @@ def evaluateHttpResponse(response, singleProbeConf,is_first_run)
     logs << "[ERR] No response from #{singleProbeConf[:fullUrl]}\n"
     
     # Set the test result to failed
-    testPassed = :false
+    testPassed = false
   else
     # Extract the status code from the response
   statusCode = response.code.to_i
@@ -26,7 +26,7 @@ def evaluateHttpResponse(response, singleProbeConf,is_first_run)
     logs << "[ERR] HTTP code expected: #{expectedStatus}, got #{statusCode}\n"
     
     # Set the test result to failed
-    testPassed = :false
+    testPassed = false
   else
     # Append a success message to the logs
     logs << "[OK]  HTTP code: Passed (#{expectedStatus})\n"
@@ -41,7 +41,7 @@ def evaluateHttpResponse(response, singleProbeConf,is_first_run)
       logs << "[ERR] The Regex #{checkRegex.source} doesn't match\n"
       
       # Set the test result to failed
-      testPassed = :false
+      testPassed = false
     else
       # Append a success message to the logs
       logs << "[OK]  Regex Check: Passed (#{checkRegex.source})\n" if checkRegex
